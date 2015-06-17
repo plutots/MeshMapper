@@ -3,6 +3,8 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofSetFrameRate(60);
+    ofEnableAntiAliasing();
+    ofEnableSmoothing();
     float cx = ofGetWidth()*0.5;
     float cy = ofGetHeight()*0.5;
     dot.set(cx,cy,20);

@@ -55,7 +55,9 @@ public:
         if(drag){
             x = getMouseX() + mouse_anchorX;
             y = getMouseY() + mouse_anchorY;
+            ofHideCursor();
         }
+        else ofShowCursor();
 
     }
     
@@ -79,29 +81,20 @@ public:
     
     
     virtual void onDragOver(int x, int y, int button) {
-        printf("MyTestObject::onDragOver(x: %i, y: %i, button: %i)\n", x, y, button);
         if (active) drag = true;
     }
     
     virtual void onPress(int x, int y, int button) {
-        printf("MyTestObject::onPress(x:  %i, y:  %i, button: %i)\n", x, y, button);
         active = true;
-        
         mouse_anchorX = IAVertex::x - x;
         mouse_anchorY = IAVertex::y - y;;
-        
-        cout << mouse_anchorX << " " << mouse_anchorY << "\n";
-        
     }
     
     virtual void onPressOutside(int x, int y, int button) {
-        printf("MyTestObject::onPress(x: %i, y: %i, button: %i)\n", x, y, button);
         active = false;
-        
     }
     
     virtual void onRelease(int x, int y, int button) {
-        printf("MyTestObject::onRelease(x: %i, y: %i, button: %i)\n", x, y, button);
         if (drag) drag = false;
     }
     
