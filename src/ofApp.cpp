@@ -7,7 +7,14 @@ void ofApp::setup(){
     ofEnableSmoothing();
     float cx = ofGetWidth()*0.5;
     float cy = ofGetHeight()*0.5;
-    dot.set(cx,cy,20);
+    //dot.set(cx,cy);
+    
+    
+    poly.addVertex(cx-100, cy-100);
+    poly.addVertex(cx-100, cy+100);
+    poly.addVertex(cx+100, cy+100);
+    poly.addVertex(cx+100, cy-100);
+    
     
     ofBackground(0,43,54);
 }

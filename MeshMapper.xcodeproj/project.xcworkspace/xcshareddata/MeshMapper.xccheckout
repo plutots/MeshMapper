@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B23E527F-1DB1-455C-9727-786A94421236</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MeshMapper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0595BA7274E0DB6922F02B72545599D36241B998</key>
+		<string>https://github.com/plutots/MeshMapper.git</string>
+		<key>328B2D9D97956D43F1C477558678A6865720047A</key>
+		<string>https://github.com/memo/ofxMSAInteractiveObject.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MeshMapper.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0595BA7274E0DB6922F02B72545599D36241B998</key>
+		<string>../..</string>
+		<key>328B2D9D97956D43F1C477558678A6865720047A</key>
+		<string>../../../../../addons/ofxMSAInteractiveObject</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/plutots/MeshMapper.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0595BA7274E0DB6922F02B72545599D36241B998</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0595BA7274E0DB6922F02B72545599D36241B998</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MeshMapper</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>328B2D9D97956D43F1C477558678A6865720047A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxMSAInteractiveObject</string>
+		</dict>
+	</array>
+</dict>
+</plist>

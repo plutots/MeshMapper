@@ -2,6 +2,12 @@
 
 #include "ofMain.h"
 #include "IAVertex.h"
+#include "IAPolygon.h"
+
+#define		IDLE_COLOR		0x2aa198
+#define		OVER_COLOR		0xcb4b16
+#define		DOWN_COLOR		0xdc322f
+
 
 class ofApp : public ofBaseApp{
 	public:
@@ -20,5 +26,6 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     private:
-        IAVertex dot;
+        //IAVertex dot;
+        IAPolygon poly;
 };

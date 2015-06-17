@@ -10,6 +10,7 @@
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E0332F9D1B31B0C4007A97DF /* ofxMSAInteractiveObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0332F9B1B31B0C4007A97DF /* ofxMSAInteractiveObject.cpp */; };
 		E0332FA01B31B1FF007A97DF /* IAVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0332F9E1B31B1FF007A97DF /* IAVertex.cpp */; };
+		E0332FA31B31DF81007A97DF /* IAPolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0332FA11B31DF81007A97DF /* IAPolygon.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
@@ -66,6 +67,9 @@
 		E0332F9C1B31B0C4007A97DF /* ofxMSAInteractiveObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMSAInteractiveObject.h; sourceTree = "<group>"; };
 		E0332F9E1B31B1FF007A97DF /* IAVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IAVertex.cpp; sourceTree = "<group>"; };
 		E0332F9F1B31B1FF007A97DF /* IAVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAVertex.h; sourceTree = "<group>"; };
+		E0332FA11B31DF81007A97DF /* IAPolygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IAPolygon.cpp; sourceTree = "<group>"; };
+		E0332FA21B31DF81007A97DF /* IAPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPolygon.h; sourceTree = "<group>"; };
+		E0332FA41B31FE60007A97DF /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -210,6 +214,9 @@
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
 				E0332F9E1B31B1FF007A97DF /* IAVertex.cpp */,
 				E0332F9F1B31B1FF007A97DF /* IAVertex.h */,
+				E0332FA11B31DF81007A97DF /* IAPolygon.cpp */,
+				E0332FA21B31DF81007A97DF /* IAPolygon.h */,
+				E0332FA41B31FE60007A97DF /* constants.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -311,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				E0332FA31B31DF81007A97DF /* IAPolygon.cpp in Sources */,
 				E0332FA01B31B1FF007A97DF /* IAVertex.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				E0332F9D1B31B0C4007A97DF /* ofxMSAInteractiveObject.cpp in Sources */,
