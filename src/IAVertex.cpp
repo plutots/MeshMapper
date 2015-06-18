@@ -17,6 +17,8 @@ IAVertex::IAVertex(){
     enabled = true;
     enableAllEvents();
     activeIAVertex = NULL;
+    mouse_anchorY = 0;
+    mouse_anchorX = 0;
 }
 
 IAVertex::~IAVertex(){
@@ -61,14 +63,38 @@ void IAVertex::draw() {
 }
 
 
+void IAVertex::onRollOver(int x, int y)
+{
+}
+
+void IAVertex::onRollOut()
+{
+}
+
+void IAVertex::onMouseMove(int x, int y)
+{
+}
+
 void IAVertex::onDragOver(int x, int y, int button) {
-    if (activeIAVertex == this) drag = true;
+    if (activeIAVertex == this){
+        //this->x = x + mouse_anchorX;
+        //this->y = y + mouse_anchorY;
+        drag = true;
+    }
+}
+
+void IAVertex::onDragOutside(int x, int y, int button) {
+    if (activeIAVertex == this){
+        //this->x = x + mouse_anchorX;
+        //this->y = y + mouse_anchorY;
+        drag = true;
+    }
 }
 
 void IAVertex::onPress(int x, int y, int button) {
     activeIAVertex = this;
-    mouse_anchorX = IAVertex::x - x;
-    mouse_anchorY = IAVertex::y - y;;
+    //mouse_anchorX = IAVertex::x - x;
+    //mouse_anchorY = IAVertex::y - y;;
 }
 
 void IAVertex::onPressOutside(int x, int y, int button) {
@@ -76,5 +102,5 @@ void IAVertex::onPressOutside(int x, int y, int button) {
 }
 
 void IAVertex::onRelease(int x, int y, int button) {
-    if (drag) drag = false;
+    drag = false;
 }

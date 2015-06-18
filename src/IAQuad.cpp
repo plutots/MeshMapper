@@ -34,3 +34,12 @@ IAQuad::~IAQuad(){
     while(!iaverts.empty()) delete iaverts.back(), iaverts.pop_back();
     iaverts.clear();
 }
+
+bool IAQuad::checkConvex(){
+    float asum = 0;
+    for(int i = 0; i < polygon->size(); ++i){
+        asum += polygon->getAngleAtIndex(i);
+    }
+    return (abs(asum - 360) < 1);
+}
+

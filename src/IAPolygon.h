@@ -25,6 +25,7 @@ public:
     
     bool drag;
     bool active;
+    bool isConvex;
     
     bool vertactive;
     
@@ -37,6 +38,7 @@ public:
     void setup();
     void update();
     void draw();
+    virtual bool checkConvex();
     virtual void onDragOver(int x, int y, int button);
     virtual void onPress(int x, int y, int button);
     virtual void onPressOutside(int x, int y, int button);

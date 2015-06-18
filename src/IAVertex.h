@@ -32,7 +32,11 @@ class IAVertex : public ofxMSAInteractiveObject {
         void setup();
         void update();
         void draw();
+        void onRollOver(int x, int y);
+        void onRollOut();
+        void onMouseMove(int x, int y);
         virtual void onDragOver(int x, int y, int button);
+        virtual void onDragOutside(int x, int y, int button);
         virtual void onPress(int x, int y, int button);
         virtual void onPressOutside(int x, int y, int button);
         virtual void onRelease(int x, int y, int button);

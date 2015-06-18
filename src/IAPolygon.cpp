@@ -16,6 +16,7 @@ IAPolygon::IAPolygon(){
     vertactive = false;
     active = false;
     enabled = true;
+    drag = false;
 }
 
 IAPolygon::~IAPolygon(){
@@ -52,11 +53,16 @@ void IAPolygon::update() {
         
     }
     
+    polygon->close();
+    
+    isConvex = checkConvex();
+    
     if(drag){
         translate(getMouseX()-mouse_anchorX,getMouseY()-mouse_anchorY);
         mouse_anchorX = getMouseX();
         mouse_anchorY = getMouseY();
     }
+    
     
     if(IAVertex::activeIAVertex){
         if(IAVertex::activeIAVertex->drag){
@@ -64,6 +70,7 @@ void IAPolygon::update() {
         }
         else ofShowCursor();
     }
+    
     
 }
 
@@ -83,6 +90,7 @@ void IAPolygon::draw() {
     ofFill();
     ofColor c;
     c.setHex(IDLE_COLOR,30);
+    if (!isConvex) c.setHex(DOWN_COLOR,100);
     ofSetColor(c);
     ofBeginShape();
     for( int i = 0; i < polygon->getVertices().size(); i++) {
@@ -101,6 +109,10 @@ void IAPolygon::translate(float dx, float dy){
         v->x+=dx;
         v->y+=dy;
     }
+}
+
+bool IAPolygon::checkConvex(){
+    return true;
 }
 
 bool IAPolygon::hitTest(int tx, int ty) const {

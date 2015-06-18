@@ -18,6 +18,8 @@ class IAQuad : public IAPolygon {
     public:
     IAQuad();
     ~IAQuad();
+    
+    bool checkConvex();
 
 };
 
