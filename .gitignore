@@ -1,5 +1,4 @@
-bin/MeshMapper.app
-bin/MeshMapperDebug.app
-MeshMapper.xcodeproj
-openFrameworks-Info.plist
-Project.xcconfig
+*.app
+*.xcodeproj
+*.plist
+*.xcconfig
