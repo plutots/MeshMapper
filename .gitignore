@@ -1,4 +1,4 @@
 *.app
-*.xcodeproj
+MeshMapper.xcodeproj
 *.plist
 *.xcconfig
