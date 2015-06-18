@@ -5,16 +5,8 @@ void ofApp::setup(){
     ofSetFrameRate(60);
     ofEnableAntiAliasing();
     ofEnableSmoothing();
-    float cx = ofGetWidth()*0.5;
-    float cy = ofGetHeight()*0.5;
-    //dot.set(cx,cy);
-    
-    
-    poly.addVertex(cx-100, cy-100);
-    poly.addVertex(cx-100, cy+100);
-    poly.addVertex(cx+100, cy+100);
-    poly.addVertex(cx+100, cy-100);
-    
+
+    quad = new IAQuad;
     
     ofBackground(0,43,54);
 }

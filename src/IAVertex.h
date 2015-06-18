@@ -17,6 +17,8 @@ class IAVertex : public ofxMSAInteractiveObject {
     
     public:
     
+        static IAVertex* activeIAVertex;
+    
         IAVertex();
         ~IAVertex();
     

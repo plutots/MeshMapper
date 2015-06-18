@@ -9,12 +9,14 @@
 #include "IAVertex.h"
 #include "constants.h"
 
+IAVertex* IAVertex::activeIAVertex = NULL;
+
 IAVertex::IAVertex(){
     size = 20;
-    active = false;
     drag = false;
     enabled = true;
     enableAllEvents();
+    activeIAVertex = NULL;
 }
 
 IAVertex::~IAVertex(){
@@ -40,15 +42,13 @@ void IAVertex::update() {
     if(drag){
         x = getMouseX() + mouse_anchorX;
         y = getMouseY() + mouse_anchorY;
-        ofHideCursor();
     }
-    else ofShowCursor();
 }
 
 void IAVertex::draw() {
     ofPushStyle();
     ofSetLineWidth(2);
-    if(active){
+    if(activeIAVertex == this){
         ofSetHexColor(DOWN_COLOR);
         ofLine(x, 0, x, ofGetHeight());
         ofLine(0, y, ofGetWidth(), y);
@@ -62,17 +62,17 @@ void IAVertex::draw() {
 
 
 void IAVertex::onDragOver(int x, int y, int button) {
-    if (active) drag = true;
+    if (activeIAVertex == this) drag = true;
 }
 
 void IAVertex::onPress(int x, int y, int button) {
-    active = true;
+    activeIAVertex = this;
     mouse_anchorX = IAVertex::x - x;
     mouse_anchorY = IAVertex::y - y;;
 }
 
 void IAVertex::onPressOutside(int x, int y, int button) {
-    active = false;
+    if (activeIAVertex == this) activeIAVertex = NULL;
 }
 
 void IAVertex::onRelease(int x, int y, int button) {

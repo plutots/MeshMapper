@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "IAVertex.h"
-#include "IAPolygon.h"
+#include "IAQuad.h"
 
 #define		IDLE_COLOR		0x2aa198
 #define		OVER_COLOR		0xcb4b16
@@ -27,5 +27,5 @@ class ofApp : public ofBaseApp{
     
     private:
         //IAVertex dot;
-        IAPolygon poly;
+        IAQuad* quad;
 };

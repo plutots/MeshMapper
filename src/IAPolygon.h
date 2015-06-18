@@ -26,6 +26,8 @@ public:
     bool drag;
     bool active;
     
+    bool vertactive;
+    
     IAPolygon();
     ~IAPolygon();
     

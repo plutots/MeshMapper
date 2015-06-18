@@ -13,6 +13,9 @@ IAPolygon::IAPolygon(){
     
     enableAllEvents();
     polygon = new ofPolyline;
+    vertactive = false;
+    active = false;
+    enabled = true;
 }
 
 IAPolygon::~IAPolygon(){
@@ -36,17 +39,30 @@ void IAPolygon::setup() {
 }
 
 void IAPolygon::update() {
+    
+    if (IAVertex::activeIAVertex) active = false;
+    
     polygon->clear();
+    vertactive = false;
     list<IAVertex*>::iterator it;
     for (it=iaverts.begin(); it!=iaverts.end(); it++) {
         IAVertex* v = *it;
         polygon->addVertex(v->x,v->y);
+        if (v->active) vertactive = true;
+        
     }
     
     if(drag){
         translate(getMouseX()-mouse_anchorX,getMouseY()-mouse_anchorY);
         mouse_anchorX = getMouseX();
         mouse_anchorY = getMouseY();
+    }
+    
+    if(IAVertex::activeIAVertex){
+        if(IAVertex::activeIAVertex->drag){
+            ofHideCursor();
+        }
+        else ofShowCursor();
     }
     
 }
@@ -58,21 +74,22 @@ void IAPolygon::draw() {
     ofNoFill();
     if(active){
         ofSetHexColor(DOWN_COLOR);
-        ofLine(x, 0, x, ofGetHeight());
-        ofLine(0, y, ofGetWidth(), y);
     }
     else if(isMouseOver()) ofSetHexColor(OVER_COLOR);
     else ofSetHexColor(IDLE_COLOR);
     polygon->draw();
     
-    ofEnableAlphaBlending();
+    //ofEnableAlphaBlending();
     ofFill();
-    ofSetColor(42, 161, 152, 30);
+    ofColor c;
+    c.setHex(IDLE_COLOR,30);
+    ofSetColor(c);
     ofBeginShape();
     for( int i = 0; i < polygon->getVertices().size(); i++) {
         ofVertex(polygon->getVertices().at(i).x, polygon->getVertices().at(i).y);
     }
     ofEndShape();
+    
     
     ofPopStyle();
 }
@@ -95,13 +112,16 @@ void IAPolygon::onDragOver(int x, int y, int button) {
 }
 
 void IAPolygon::onPress(int x, int y, int button) {
-    active = true;
-    mouse_anchorX = x;
-    mouse_anchorY = y;
+    if (!IAVertex::activeIAVertex){
+        active = true;
+        mouse_anchorX = x;
+        mouse_anchorY = y;
+    }
 }
 
 void IAPolygon::onPressOutside(int x, int y, int button) {
     active = false;
+    vertactive = false;
 }
 
 void IAPolygon::onRelease(int x, int y, int button) {
